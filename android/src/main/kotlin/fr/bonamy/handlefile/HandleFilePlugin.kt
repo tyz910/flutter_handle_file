@@ -107,7 +107,7 @@ class HandleFilePlugin : FlutterPlugin, MethodCallHandler,
     private fun extractFileFromIntent(context: Context, intent: Intent): String? {
         try {
             val action = intent.action
-            if (Intent.ACTION_VIEW == action) {
+            if (Intent.ACTION_VIEW == action || Intent.ACTION_SEND == action) {
 
                 val scheme = intent.scheme
                 Log.i(LOG_TAG, "Intent scheme = $scheme")
